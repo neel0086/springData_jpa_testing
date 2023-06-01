@@ -22,5 +22,5 @@ public class Student {
     private Long studentId;
     private String name;
     private String email;
-    private Long age;
+    private Integer age;
 }
