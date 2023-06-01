@@ -1,5 +1,6 @@
 package com.example.EntityTest.Repository;
 
+import com.example.EntityTest.entity.Parent;
 import com.example.EntityTest.entity.Student;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,23 @@ class StudentRepositoryTest {
                 .email("aryanmehta16@gmail.com")
                 .name("Aryan Mehta")
                 .age(12)
+                .build();
+        studentRepository.save(student);
+    }
+    @Test
+    public void saveStudentWithParent(){
+        Parent parent = Parent
+                .builder()
+                .name("Amit Mehta")
+                .number("9999999999")
+                .age(50)
+                .build();
+        Student student= Student
+                .builder()
+                .email("aryanmehta16@gmail.com")
+                .name("Aryan Mehta")
+                .age(12)
+                .parent(parent)
                 .build();
         studentRepository.save(student);
     }
